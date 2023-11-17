@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://academy.hackthebox.com/module/75/section/753 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="origin-trial" content="Az520Inasey3TAyqLyojQa8MnmCALSEU29yQFW8dePZ7xQTvSt73pHazLFTK5f7SyLUJSo2uKLesEtEa9aUYcgMAAACPeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IkRpc2FibGVUaGlyZFBhcnR5U3RvcmFnZVBhcnRpdGlvbmluZyIsImV4cGlyeSI6MTcyNTQwNzk5OSwiaXNTdWJkb21haW4iOnRydWUsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0=">
+
+<title>Introduction to Web Applications</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="Premium Multipurpose Admin &amp; Dashboard Template" name="description">
+<meta content="Themesbrand" name="author">
+<link rel="shortcut icon" href="https://academy.hackthebox.com/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://academy.hackthebox.com/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://academy.hackthebox.com/images/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://academy.hackthebox.com/images/apple-touch-icon.png">
+<link rel="mask-icon" href="https://academy.hackthebox.com/images/safari-pinned-tab.svg">
+<link rel="preload" as="style" href="./Introduction to Web Applications_files/bootstrap-dark-b19e586e.css"><link rel="preload" as="style" href="./Introduction to Web Applications_files/app-dark-fe01cb6c.css"><link rel="preload" as="style" href="./Introduction to Web Applications_files/icons-cb325f16.css"><link rel="preload" as="style" href="./Introduction to Web Applications_files/prism-8ad01d51.css"><link rel="stylesheet" href="./Introduction to Web Applications_files/bootstrap-dark-b19e586e.css"><link rel="stylesheet" href="./Introduction to Web Applications_files/app-dark-fe01cb6c.css"><link rel="stylesheet" href="./Introduction to Web Applications_files/icons-cb325f16.css"><link rel="stylesheet" href="./Introduction to Web Applications_files/prism-8ad01d51.css">
+<link href="./Introduction to Web Applications_files/toastr.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="./Introduction to Web Applications_files/ryt3opf.css">
+<script type="text/javascript" async="" src="./Introduction to Web Applications_files/recaptcha__en.js.download" crossorigin="anonymous" integrity="sha384-jmuBB3ajBz67HkD9EOwlByuyyxCYut7RyJGCbt+luJzVIFeqE/GGKvIVjUTdjP4o"></script><script type="text/javascript" async="" src="./Introduction to Web Applications_files/analytics.min.js.download"></script><script>
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="eLzeD0QoARKZ42pc8AGEUYpcFLpYkf0I";analytics.SNIPPET_VERSION="4.13.2";
+            analytics.load("eLzeD0QoARKZ42pc8AGEUYpcFLpYkf0I");
+                                            properties = {"platform":"Academy","platform_version":"V1","module_id":75,"module_name":"Introduction to Web Applications","module_difficulty":"Fundamental","section_id":753,"section_title":"HTML"};
+                                    analytics.page(
+                "Module",
+                properties
+            );
+                                }
+    }();
+</script>
+<style>
+        .website-screenshot-url {
+          height: 22px;
+          cursor: text;
+          padding-left: 10px;
+        }
+
+        .iterminal {
+          position: fixed;
+          bottom: 0;
+          z-index: 100;
+          width: 100%;
+          left: 0;
+        }
+
+
+        .page-head {
+          display: none;
+        }
+
+        .btn-circle {
+          width: 25px;
+          height: 25px;
+          padding: 6px 0px;
+          border-radius: 15px;
+          text-align: center;
+          font-size: 9px;
+          line-height: 1.42857;
+        }
+      </style>
+<script src="./Introduction to Web Applications_files/api.js.download"></script>
+</head>
+<body data-layout="detached" data-topbar="colored">
+<div class="container-fluid">
+<div id="layout-wrapper">
+<header id="page-topbar">
+<div class="navbar-header">
+<div class="container-fluid">
+<div class="d-flex align-items-center justify-content-between">
+<div class="d-flex align-items-center">
+<div class="navbar-brand-box">
+<a href="https://academy.hackthebox.com/dashboard" class="logo">
+<span class="logo-sm">
+<img src="./Introduction to Web Applications_files/new-logo-htb.svg" alt="" height="30">
+</span>
+<span class="logo-md">
+<img src="./Introduction to Web Applications_files/logo.svg" alt="" height="30">
+</span>
+<span class="logo-lg">
+<img src="./Introduction to Web Applications_files/logo.svg" alt="" height="36">
+</span>
+</a>
+</div>
+<div class="d-flex align-items-center">
+<button type="button" class="btn btn-sm font-size-16 header-item toggle-btn waves-effect" id="vertical-menu-btn">
+<i class="fa fa-fw fa-bars"></i>
+</button>
+</div>
+<div class="topnav">
+<nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+<div class="collapse navbar-collapse" id="topnav-menu-content">
+<ul class="navbar-nav active">
+<li class="nav-item">
+<a class="nav-link" href="https://academy.hackthebox.com/dashboard"><i class="mdi mdi-monitor-dashboard"></i> Dashboard</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://academy.hackthebox.com/modules"><i class="mdi mdi-book-open"></i>
+Modules</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://academy.hackthebox.com/paths"><i class="mdi mdi-map-marker-path"></i> Paths</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="float-right">
+<div class="dropdown d-none d-lg-inline-block ml-1">
+<a href="https://academy.hackthebox.com/billing">
+<button type="button" class="btn btn-extra-light">
+<i class="fad fa-cube text-success mt-1 mr-2"></i>&nbsp;Purchase Cubes
+</button>
+</a>
+</div>
+<div class="dropdown d-none d-lg-inline-block ml-1">
+<button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
+<i class="mdi mdi-fullscreen fullscreen-icon"></i>
+</button>
+</div>
+<div class="dropdown d-inline-block">
+<button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<img class="rounded-circle header-profile-user" src="./Introduction to Web Applications_files/dc738fa689ccd4c5627a93c5ad32e66d" alt="Header Avatar">
+<span class="d-none d-xl-inline-block ml-1">khalfan6</span>
+<i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+</button>
+<div class="dropdown-menu dropdown-menu-right">
+<a class="dropdown-item" href="https://academy.hackthebox.com/referral"><i class="bx bx-gift font-size-16 align-middle mr-1"></i> Refer a friend
+<i class="fa fa-solid fa-circle font-size-6 align-middle ml-2 text-success"></i>
+</a>
+<a class="dropdown-item" href="https://academy.hackthebox.com/billing"><i class="bx bx-wallet font-size-16 align-middle mr-1"></i> Billing</a>
+<a class="dropdown-item d-block" href="https://academy.hackthebox.com/settings"><i class="bx bx-wrench font-size-16 align-middle mr-1"></i> Settings</a>
+<a class="dropdown-item d-block" href="https://academy.hackthebox.com/vpn"><i class="bx bx-server font-size-16 align-middle mr-1"></i> VPN Settings</a>
+<a class="dropdown-item d-block" href="https://academy.hackthebox.com/sso"><i class="bx bx-server font-size-16 align-middle mr-1"></i> SSO Settings</a>
+<div class="dropdown-divider"></div>
+<form method="POST" action="https://academy.hackthebox.com/logout"> <input type="hidden" name="_token" value="tDsoddvkukHWCp6z5hcYjAU5SEs0LU1RW1kKro33"> <a class="dropdown-item text-danger log-out" href="https://academy.hackthebox.com/module/75/section/753#"><i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout</a>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="vertical-menu overflow-hidden  d-lg-none ">
+<div class="vertical-menu-overlay"></div>
+<div class="h-100 overflow-auto">
+<div class="user-wid text-center py-4">
+<div class="user-img">
+<img src="./Introduction to Web Applications_files/dc738fa689ccd4c5627a93c5ad32e66d" alt="" class="avatar-md mx-auto rounded-circle">
+</div>
+<div class="mt-3">
+<p class="text-dark mb-0 font-weight-medium font-size-16">khalfan6</p>
+<p class="text-body mt-1 mb-1">
+Free
+</p>
+<p>
+<span class="custom-badge custom-badge-soft-secondary" data-toggle="tooltip" data-title="Cubes" data-original-title="" title="">
+<i class="fad fa-cube text-success mr-1"></i>
+<span class="cubeBalance">
+5
+</span>
+</span>
+</p>
+</div>
+</div>
+<div id="sidebar-menu">
+<ul class="metismenu list-unstyled" id="side-menu">
+<li class="menu-title">Learn</li>
+<li><a class="navDashboard" href="https://academy.hackthebox.com/dashboard"><i class="mdi mdi-monitor-dashboard"></i> Dashboard</a></li>
+<li>
+<a class="navDashboard" href="https://academy.hackthebox.com/exams"><i class="mdi mdi-certificate"></i>
+Exams</a></li>
+<li>
+<a class="navModules" href="javascript: void(0);" aria-expanded="false">
+<i class="mdi mdi-book-open"></i>
+<span>Modules</span>
+</a>
+<ul class="sub-menu mm-collapse" aria-expanded="false">
+<li><a href="https://academy.hackthebox.com/modules"><i class="mdi mdi-book-open"></i> All Modules</a>
+</li>
+<li>
+<a href="https://academy.hackthebox.com/modules/inprogress"><i class="mdi mdi-progress-upload"></i>
+In-Progress Modules</a></li>
+<li><a href="https://academy.hackthebox.com/modules/locked"><i class="mdi mdi-account-arrow-left-outline"></i> Available
+Modules</a>
+</li>
+<li>
+<a href="https://academy.hackthebox.com/modules/unlocked"><i class="mdi mdi-account-check-outline"></i>
+Owned
+Modules</a></li>
+<li>
+<a href="https://academy.hackthebox.com/modules/changelog"><i class="mdi mdi-playlist-check"></i>
+Change Log</a></li>
+</ul>
+</li>
+<li class="pathsLink">
+<a class="navPaths" href="javascript: void(0);" aria-expanded="false">
+<i class="mdi mdi-map-marker-path"></i>
+<span>Paths</span>
+</a>
+<ul class="sub-menu mm-collapse" aria-expanded="false">
+<li class="skillPathsLink"><a href="https://academy.hackthebox.com/paths"><i class="mdi mdi-chart-line-variant"></i> Skill Paths</a></li>
+<li class="jobRolePathsLink"><a href="https://academy.hackthebox.com/paths/jobrole"><i class="mdi mdi-briefcase"></i> Job Role Paths</a></li>
+</ul>
+</li>
+<li>
+<a class="navDashboard" href="https://academy.hackthebox.com/academy-relations"><i class="mdi mdi-sitemap"></i>
+Academy x HTB Labs</a>
+</li>
+<li class="menu-title">My Achievements</li>
+<li>
+<a class="navDashboard" href="https://academy.hackthebox.com/my-certificates"><i class="mdi mdi-certificate"></i>
+My Certificates </a></li>
+<li>
+</li><li>
+<a class="navDashboard" href="https://academy.hackthebox.com/my-badges"><i class="mdi mdi-trophy"></i>
+My Badges </a>
+</li>
+<li>
+</li><li class="menu-title">Referrals</li>
+<li>
+<a class="navDashboard" href="https://academy.hackthebox.com/referral">
+<i class="mdi mdi-gift"></i> Invite friends
+</a>
+</li><li>
+</li><li>
+</li><li class="menu-title">Get Help</li>
+<li>
+<a class="navSupport" href="http://help.hackthebox.eu/" rel="noopener nofollow norefferer" target="_blank"><i class="mdi mdi-help-box"></i>Help Center</a></li>
+<li><a class="navSupport" data-toggle="tooltip" href="https://academy.hackthebox.com/faq" data-original-title="" title=""><i class="mdi mdi-help-circle"></i> FAQ</a></li>
+<li><a class="navSupport" href="https://discord.gg/hackthebox" rel="noopener nofollow norefferer" target="_blank"><i class="mdi mdi-discord"></i>
+Discord</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="vertical-menu overflow-hidden  d-lg-none ">
+<div class="vertical-menu-overlay"></div>
+<div class="h-100 overflow-auto">
+<div class="user-wid text-center py-4">
+<div class="user-img">
+<img src="./Introduction to Web Applications_files/dc738fa689ccd4c5627a93c5ad32e66d" alt="" class="avatar-md mx-auto rounded-circle">
+</div>
+<div class="mt-3">
+<p class="text-dark mb-0 font-weight-medium font-size-16">khalfan6</p>
+<p class="text-body mt-1 mb-1">
+Free
+</p>
+<p>
+<span class="custom-badge custom-badge-soft-secondary" data-toggle="tooltip" data-title="Cubes" data-original-title="" title="">
+<i class="fad fa-cube text-success mr-1"></i>
+<span class="cubeBalance">
+5
+</span>
+</span>
+</p>
+</div>
+</div>
+<div id="sidebar-menu">
+<ul class="metismenu list-unstyled" id="side-menu">
+<li class="menu-title">Learn</li>
+<li><a class="navDashboard" href="https://academy.hackthebox.com/dashboard"><i class="mdi mdi-monitor-dashboard"></i> Dashboard</a></li>
+<li>
+<a class="navDashboard" href="https://academy.hackthebox.com/exams"><i class="mdi mdi-certificate"></i>
+Exams</a></li>
+<li>
+<a class="navModules" href="javascript: void(0);">
+<i class="mdi mdi-book-open"></i>
+<span>Modules</span>
+</a>
+<ul class="sub-menu mm-collapse" aria-expanded="false">
+<li><a href="https://academy.hackthebox.com/modules"><i class="mdi mdi-book-open"></i> All Modules</a>
+</li>
+<li>
+<a href="https://academy.hackthebox.com/modules/inprogress"><i class="mdi mdi-progress-upload"></i>
+In-Progress Modules</a></li>
+<li><a href="https://academy.hackthebox.com/modules/locked"><i class="mdi mdi-account-arrow-left-outline"></i> Available
+Modules</a>
+</li>
+<li>
+<a href="https://academy.hackthebox.com/modules/unlocked"><i class="mdi mdi-account-check-outline"></i>
+Owned
+Modules</a></li>
+<li>
+<a href="https://academy.hackthebox.com/modules/changelog"><i class="mdi mdi-playlist-check"></i>
+Change Log</a></li>
+</ul>
+</li>
+<li class="pathsLink">
+<a class="navPaths" href="javascript: void(0);">
+<i class="mdi mdi-map-marker-path"></i>
+<span>Paths</span>
+</a>
+<ul class="sub-menu mm-collapse" aria-expanded="false">
+<li class="skillPathsLink"><a href="https://academy.hackthebox.com/paths"><i class="mdi mdi-chart-line-variant"></i> Skill Paths</a></li>
+<li class="jobRolePathsLink"><a href="https://academy.hackthebox.com/paths/jobrole"><i class="mdi mdi-briefcase"></i> Job Role Paths</a></li>
+</ul>
+</li>
+<li>
+<a class="navDashboard" href="https://academy.hackthebox.com/academy-relations"><i class="mdi mdi-sitemap"></i>
+Academy x HTB Labs</a>
+</li>
+<li class="menu-title">My Achievements</li>
+<li>
+<a class="navDashboard" href="https://academy.hackthebox.com/my-certificates"><i class="mdi mdi-certificate"></i>
+My Certificates </a></li>
+<li>
+</li><li>
+<a class="navDashboard" href="https://academy.hackthebox.com/my-badges"><i class="mdi mdi-trophy"></i>
+My Badges </a>
+</li>
+<li>
+</li><li class="menu-title">Referrals</li>
+<li>
+<a class="navDashboard" href="https://academy.hackthebox.com/referral">
+<i class="mdi mdi-gift"></i> Invite friends
+</a>
+</li><li>
+</li><li>
+</li><li class="menu-title">Get Help</li>
+<li>
+<a class="navSupport" href="http://help.hackthebox.eu/" rel="noopener nofollow norefferer" target="_blank"><i class="mdi mdi-help-box"></i>Help Center</a></li>
+<li><a class="navSupport" data-toggle="tooltip" href="https://academy.hackthebox.com/faq" data-original-title="" title=""><i class="mdi mdi-help-circle"></i> FAQ</a></li>
+<li><a class="navSupport" href="https://discord.gg/hackthebox" rel="noopener nofollow norefferer" target="_blank"><i class="mdi mdi-discord"></i>
+Discord</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="main-content">
+<div class="page-content">
+<div class="row">
+<div class="col-12">
+<div class="page-title-box d-flex align-items-center justify-content-between">
+<h4 class="page-title mb-0 font-size-18 letter-spacing-1">Introduction to Web Applications &nbsp;<i style="cursor:pointer;" data-module-id="75" data-toggle="tooltip" data-title="Toggle To-Do" class="favouriteBtn  fa  fa-heart text-danger" data-original-title="" title=""></i>
+</h4>
+<div class="page-title-right">
+<ol class="breadcrumb m-0">
+<li class="breadcrumb-item"><a href="javascript: void(0);">Page 4</a></li>
+<li class="breadcrumb-item active">HTML</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="row justify-content-xl-center">
+<div class="col-md-12 col-xl-9 col-xxl-7">
+<div class="training-module">
+<h1>HTML</h1>
+<hr>
+<p>The first and most dominant component of the front end of web applications is <a href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener nofollow">HTML (HyperText Markup Language)</a>. HTML is at the very core of any web page we see on the internet. It contains each page's basic elements, including titles, forms, images, and many other elements. The web browser, in turn, interprets these elements and displays them to the end-user.</p>
+<p>The following is a very basic example of an HTML page:</p>
+<h4>Example</h4>
+<div class="window_container"><div class="window_content"><div class="window_top">Code: <span class="text-success">html</span></div><pre class=" language-html"><code class=" language-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Page Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>A Heading<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>A Paragraph<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div>
+<p>This would display the following:
+<img src="./Introduction to Web Applications_files/web_apps_html_2.jpg" alt="HTML Example"></p>
+<p>As we can see, HTML elements are displayed in a tree form, similar to <code>XML</code> and other languages:</p>
+<h4>HTML Structure</h4>
+<div class="window_container"><div class="window_content">
+                <div class="window_top">
+                    <span class="window_dot bg-danger"></span>
+                    <span class="window_dot bg-warning"></span>
+                    <span class="window_dot bg-success"></span>
+                    <span class="window_title">HTML Structure</span>
+                </div>
+            <pre class=" language-shell-session" style="line-height: 0px;"><code class=" language-shell-session"><span class="token output">document
+ - html
+   -- head
+      --- title
+   -- body
+      --- h1
+      --- p
+</span></code></pre></div></div>
+<p>Each element can contain other HTML elements, while the main <code>HTML</code> tag should contain all other elements within the page, which falls under <code>document</code>, distinguishing between <code>HTML</code> and documents written for other languages, such as <code>XML</code> documents.</p>
+<p>The HTML elements of the above code can be viewed as follows:</p>
+<div style="text-align: left; font-weight: bold; padding: 3px; font-size: 20px; width:50%; border:2px solid grey; margin:auto; background-color:#1A2332">&lt;html&gt;
+<div style="width:95%; border:2px solid grey; padding: 3px; margin:10px">    &lt;head&gt;
+<div style="text-align: center; width:95%; border:2px solid grey; padding: 3px; margin:10px">&lt;title&gt;Page Title&lt;/title&gt;
+</div>
+    &lt;/head&gt;
+</div>
+<div style="width:95%; border:2px solid grey; padding: 3px; margin:10px; background-color:#1A2332">    &lt;body&gt;
+<div style="text-align: center; width:95%; border:2px solid grey; padding: 3px; margin:10px; background-color:#1A2332">&lt;h1&gt;A Heading&lt;/h1&gt;</div>
+<div style="text-align: center; width:95%; border:2px solid grey; padding: 3px; margin:10px; background-color:#1A2332">&lt;p&gt;A Paragraph&lt;/p&gt;</div>
+    &lt;/body&gt;
+</div>
+&lt;/html&gt;
+</div>
+<br>
+<p>Each HTML element is opened and closed with a tag that specifies the element's type 'e.g. <code>&lt;p&gt;</code> for paragraphs', where the content would be placed between these tags. Tags may also hold the element's id or class 'e.g. <code>&lt;p id='para1'&gt;</code> or <code>&lt;p id='red-paragraphs'&gt;</code>', which is needed for CSS to properly format the element. Both tags and the content comprise the entire element.</p>
+<hr>
+<h2>URL Encoding</h2>
+<p>An important concept to learn in HTML is <a href="https://en.wikipedia.org/wiki/Percent-encoding" target="_blank" rel="noopener nofollow">URL Encoding</a>, or percent-encoding. For a browser to properly display a page's contents, it has to know the charset in use. In URLs, for example, browsers can only use <a href="https://en.wikipedia.org/wiki/ASCII" target="_blank" rel="noopener nofollow">ASCII</a> encoding, which only allows alphanumerical characters and certain special characters. Therefore, all other characters outside of the ASCII character-set have to be encoded within a URL. URL encoding replaces unsafe ASCII characters with a <code>%</code> symbol followed by two hexadecimal digits.</p>
+<p>For example, the single-quote character '<code>'</code>' is encoded to '<code>%27</code>', which can be understood by browsers as a single-quote. URLs cannot have spaces in them and will replace a space with either a <code>+</code> (plus sign) or <code>%20</code>. Some common character encodings are:</p>
+<div class="table-responsive"><table class="table table-striped text-left">
+<thead>
+<tr>
+<th>Character</th>
+<th>Encoding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>space</td>
+<td>%20</td>
+</tr>
+<tr>
+<td>!</td>
+<td>%21</td>
+</tr>
+<tr>
+<td>"</td>
+<td>%22</td>
+</tr>
+<tr>
+<td>#</td>
+<td>%23</td>
+</tr>
+<tr>
+<td>$</td>
+<td>%24</td>
+</tr>
+<tr>
+<td>%</td>
+<td>%25</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>%26</td>
+</tr>
+<tr>
+<td>'</td>
+<td>%27</td>
+</tr>
+<tr>
+<td>(</td>
+<td>%28</td>
+</tr>
+<tr>
+<td>)</td>
+<td>%29</td>
+</tr>
+</tbody>
+</table></div>
+<p>A full character encoding table can be seen <a href="https://www.w3schools.com/tags/ref_urlencode.ASP" target="_blank" rel="noopener nofollow">here</a>.</p>
+<p>Many online tools can be used to perform URL encoding/decoding. Furthermore, the popular web proxy <a href="https://portswigger.net/burp" target="_blank" rel="noopener nofollow">Burp Suite</a> has a decoder/encoder which can be used to convert between various types of encodings. Try encoding/decoding some characters and strings using this <a href="https://www.url-encode-decode.com/" target="_blank" rel="noopener nofollow">online tool</a>.</p>
+<h4>Usage</h4>
+<p>The <code>&lt;head&gt;</code> element usually contains elements that are not directly printed on the page, like the page title, while all main page elements are located under <code>&lt;body&gt;</code>. Other important elements include the <code>&lt;style&gt;</code>, which holds the page's CSS code, and the <code>&lt;script&gt;</code>, which holds the JS code of the page, as we will see in the next section.</p>
+<p>Each of these elements is called a <a href="https://en.wikipedia.org/wiki/Document_Object_Model" target="_blank" rel="noopener nofollow">DOM (Document Object Model)</a>. The <a href="https://www.w3.org/" target="_blank" rel="noopener nofollow">World Wide Web Consortium (W3C)</a> defines <code>DOM</code> as:</p>
+<p><code>"The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document."</code></p>
+<p>The DOM standard is separated into 3 parts:</p>
+<ul>
+<li>
+<code>Core DOM</code> - the standard model for all document types</li>
+<li>
+<code>XML DOM</code> - the standard model for XML documents</li>
+<li>
+<code>HTML DOM</code> - the standard model for HTML documents</li>
+</ul>
+<p>For example, from the above tree view, we can refer to DOMs as <code>document.head</code> or <code>document.h1</code>, and so on.</p>
+<p>Understanding the HTML DOM structure can help us understand where each element we view on the page is located, which enables us to view the source code of a specific element on the page and look for potential issues. We can locate HTML elements by their id, their tag name, or by their class name.</p>
+<p>This is also useful when we want to utilize front-end vulnerabilities (like <code>XSS</code>) to manipulate existing elements or create new elements to serve our needs.</p>
+<div class="card" id="questionsDiv">
+<div class="card-body">
+<div class="row">
+<div class="col-9">
+<h4 class="card-title mt-0 font-size-medium">Questions</h4>
+<p class="card-title-desc font-size-large font-size-15">Answer the question(s) below
+to complete this Section and earn cubes!</p>
+</div>
+<div class="col-3 text-right float-right">
+</div>
+</div>
+<div>
+<div>
+<label class="module-question" for="440"><span class="badge badge-soft-dark font-size-14 mr-2">+ 1 <i class="fad fa-cube text-success"></i></span> What is the HTML tag used to show an image?
+</label>
+<div class="row">
+<div class="col-lg-12 mb-4">
+<input class="form-control text-success" type="text" value="&lt;img&gt;" disabled="true">
+</div>
+<div class="d-flex justify-content-end w-100 mr-3">
+<div class="mb-4 mr-1">
+<button class="btn btn-primary btn-block btnAnswer" id="btnAnswer440" data-question-id="440" disabled="true">
+<div class="submit-button-text">
+<i class="fad fa-flag-checkered mr-2"></i> Submit
+</div>
+<div class="submit-button-loader mx-4 d-none">
+<i class="fa fa-circle-notch fa-spin"></i>
+</div>
+</button>
+</div>
+<div class="mb-4  mr-1">
+<button class="btn btn-outline-warning btn-block" data-toggle="modal" id="hintBtn440" data-target="#hint440"><i class="fad fa-life-ring mr-2"></i> Hint
+</button>
+</div>
+</div>
+</div>
+<div class=""></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card bg-color-blue-nav" style="margin: 30px 0">
+<div class="card-body">
+<a href="https://academy.hackthebox.com/module/75/section/752" class="btn btn-light module-button py-2" style="float: left"><i class="fa fa-arrow-alt-left mr-1"></i> Previous</a>
+<form action="https://academy.hackthebox.com/module" method="POST" class="form-inline" id="completeForm" style="float: right">
+<input type="hidden" name="module_id" value="75">
+<input type="hidden" name="page_id" value="5">
+<input type="hidden" name="completed" value="1">
+<button id="completeBtn" class="btn btn-outline-success" style="">
+<div id="complete-button-text">
+<i class="fa fa-check-circle"></i> Mark Complete &amp; Next
+</div>
+<div id="complete-button-loader" class="mx-5 d-none">
+<i class="fa fa-circle-notch fa-spin"></i>
+</div>
+</button>
+</form>
+<a href="https://academy.hackthebox.com/module/75/section/754" class="btn btn-light ml-2 module-button py-2" style="float: left">Next <i class="ml-1 fa fa-arrow-alt-right"></i></a>
+</div>
+</div>
+</div>
+<div class="col-md-12 col-xl-3 col-xxl-3">
+<div id="table-of-contents">
+<div class="card">
+<div class="card-body bg-color-blue-nav">
+<a href="https://academy.hackthebox.com/module/75/section/753#questionsDiv" class="btn btn-light btn-block module-button"><i class="fad fa-question mr-2"></i> Go to Questions</a>
+</div>
+</div>
+<div class="card" id="TOC">
+<div class="card-body bg-color-blue-nav">
+<h5 class="card-title font-size-15 mb-4">Table of Contents</h5>
+<h6 class="mt-4 mb-2">Introduction to Web Applications</h6> <a href="https://academy.hackthebox.com/module/75/section/719" class="btn   btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<span class="font-size-13">Introduction</span>
+<i class="fad fa-check-square text-success float-right mt-1" style="top: 2px"></i>
+</a>
+<a href="https://academy.hackthebox.com/module/75/section/751" class="btn   btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<span class="font-size-13">Web Application Layout</span>
+<i class="fad fa-check-square text-success float-right mt-1" style="top: 2px"></i>
+</a>
+<a href="https://academy.hackthebox.com/module/75/section/752" class="btn   btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<span class="font-size-13">Front End vs. Back End</span>
+<i class="fad fa-check-square text-success float-right mt-1" style="top: 2px"></i>
+</a>
+<h6 class="mt-4 mb-2">Front End Components</h6> <a href="https://academy.hackthebox.com/module/75/section/753" class="btn   text-primary  btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<i class="fad fa-cube text-success mt-1 mr-2"></i>&nbsp;
+<span class="font-size-13">HTML</span>
+<i class="fad fa-check-square text-success float-right mt-1" style="top: 2px"></i>
+</a>
+<a href="https://academy.hackthebox.com/module/75/section/754" class="btn   btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<i class="fad fa-cube text-success mt-1 mr-2"></i>&nbsp;
+<span class="font-size-13">Cascading Style Sheets (CSS)</span>
+<i class="fad fa-check-square text-success float-right mt-1" style="top: 2px"></i>
+</a>
+<a href="https://academy.hackthebox.com/module/75/section/755" class="btn   btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<span class="font-size-13">JavaScript</span>
+<i class="fad fa-check-square text-success float-right mt-1" style="top: 2px"></i>
+</a>
+<h6 class="mt-4 mb-2">Front End Vulnerabilities</h6> <a href="https://academy.hackthebox.com/module/75/section/756" class="btn   btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<i class="fad fa-cube text-success mt-1 mr-2"></i>&nbsp;
+<span class="font-size-13">Sensitive Data Exposure</span>
+</a>
+<a href="https://academy.hackthebox.com/module/75/section/757" class="btn   btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<i class="fad fa-cube text-success mt-1 mr-2"></i>&nbsp;
+<span class="font-size-13">HTML Injection</span>
+</a>
+<a href="https://academy.hackthebox.com/module/75/section/758" class="btn   btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<i class="fad fa-cube text-success mt-1 mr-2"></i>&nbsp;
+<span class="font-size-13">Cross-Site Scripting (XSS)</span>
+</a>
+<a href="https://academy.hackthebox.com/module/75/section/828" class="btn   btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<span class="font-size-13">Cross-Site Request Forgery (CSRF)</span>
+</a>
+<h6 class="mt-4 mb-2">Back End Components</h6> <a href="https://academy.hackthebox.com/module/75/section/759" class="btn   btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<i class="fad fa-cube text-success mt-1 mr-2"></i>&nbsp;
+<span class="font-size-13">Back End Servers</span>
+<i class="fad fa-check-square text-success float-right mt-1" style="top: 2px"></i>
+</a>
+<a href="https://academy.hackthebox.com/module/75/section/760" class="btn   btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<i class="fad fa-cube text-success mt-1 mr-2"></i>&nbsp;
+<span class="font-size-13">Web Servers</span>
+<i class="fad fa-check-square text-success float-right mt-1" style="top: 2px"></i>
+</a>
+<a href="https://academy.hackthebox.com/module/75/section/761" class="btn   btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<i class="fad fa-cube text-success mt-1 mr-2"></i>&nbsp;
+<span class="font-size-13">Databases</span>
+<i class="fad fa-check-square text-success float-right mt-1" style="top: 2px"></i>
+</a>
+<a href="https://academy.hackthebox.com/module/75/section/762" class="btn   btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<i class="fad fa-cube text-success mt-1 mr-2"></i>&nbsp;
+<span class="font-size-13">Development Frameworks &amp; APIs</span>
+</a>
+<h6 class="mt-4 mb-2">Back End Vulnerabilities</h6> <a href="https://academy.hackthebox.com/module/75/section/764" class="btn   btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<i class="fad fa-cube text-success mt-1 mr-2"></i>&nbsp;
+<span class="font-size-13">Common Web Vulnerabilities</span>
+<i class="fad fa-check-square text-success float-right mt-1" style="top: 2px"></i>
+</a>
+<a href="https://academy.hackthebox.com/module/75/section/763" class="btn   btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<i class="fad fa-cube text-success mt-1 mr-2"></i>&nbsp;
+<span class="font-size-13">Public Vulnerabilities</span>
+</a>
+<h6 class="mt-4 mb-2">Next Steps</h6> <a href="https://academy.hackthebox.com/module/75/section/819" class="btn   btn-sm btn-block mt-1 py-2 text-left btn-lighter">
+<span class="font-size-13">Next Steps</span>
+<i class="fad fa-check-square text-success float-right mt-1" style="top: 2px"></i>
+</a>
+</div>
+</div>
+<div class="card">
+<div class="card-body bg-color-blue-nav">
+<h5 class="card-title mb-4">My Workstation</h5>
+<div class="row">
+<div class="col-12">
+<div id="sidePreview" style="height: 160px; border: 1px solid #323232; border-radius: 5px; background-color: #0a121c; text-align: center">
+<div class="screenPlaceholder">
+<p class="instanceStart" style="padding-top:70px; letter-spacing: 5px;">
+OFFLINE</p>
+<p class="instanceLoading " style="padding-top:70px; display: none"><i class="fa fa-circle-notch fa-spin"></i> Starting...</p>
+</div>
+</div>
+</div>
+<div class="col-12 mt-2">
+<div class="instanceStart">
+<button class="startInstanceBtn btn btn-light btn-sm mt-2 btn-block module-button py-2  ">
+<i class="fad fa-play-circle text-success"></i> &nbsp;Start Instance
+</button>
+<p class="text-center mt-2 font-size-13 font-secondary">
+<span class="text-success spawnsLeft">
+1
+</span> / 1 spawns left
+</p>
+</div>
+<button style="display:none;" class="fullScreenBtn btn btn-light btn-sm mt-2 module-button py-2"><i class="fad fa-expand text-success"></i> &nbsp;Interact
+</button>
+<button style="display:none;" class="terminateInstanceBtn btn btn-light btn-sm mt-2 module-button py-2"><i class="fad fa-times text-danger"></i> &nbsp;Terminate
+</button>
+<button style="display:none;" class="resetInstanceBtn btn btn-light btn-sm mt-2 module-button py-2"><i class="fad fa-sync text-warning"></i> &nbsp;Reset
+</button>
+<div class="btn-group" role="group">
+<button style="display:none; cursor: default;" class=" extendInstanceBtn btn btn-light btn-sm mt-2 module-button py-2">Life
+Left: <span class="lifeLeft"></span>m
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="hint440" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="hint440" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-body">
+<div class="text-center">
+<h5><i class="fad fa-life-ring text-success"></i>&nbsp; Hint</h5>
+<br>
+<h6>Google is your friend. Only put the opening tag 'i.e. &lt;...&gt;'</h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="cheatSheetModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="unlockModuleModal" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-body">
+<div class="text-center text-break">
+<h5><i class="fad fa-file-alt"></i>&nbsp; Cheat Sheet</h5>
+<p>The cheat sheet is a useful command reference for this module.</p>
+</div>
+</div>
+<div class="modal-footer">
+<a class="btn btn-light btn-block" href="https://academy.hackthebox.com/module/cheatsheet/75">Download
+Cheatsheet</a>
+</div>
+</div>
+</div>
+</div>
+<div id="requestHelpModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="requestHelpModal" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header text-center">
+<h5 class="modal-title w-100">Do you need help with this question?</h5>
+</div>
+<div class="modal-body">
+<div class="text-center">
+<img src="./Introduction to Web Applications_files/discord-alternative.svg" alt="discord icon">
+<p class="mb-1">It looks like you need some help answering this question!</p>
+<p>Click on the button below to request help from our Discord admins.</p>
+<button class="btn btn-outline-success btn-block" onclick="requestHelp()">
+Request Help
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="linkDiscordModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="linkDiscordModal" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header text-center">
+<h5 class="modal-title w-100">Do you need help with this question?</h5>
+</div>
+<div class="modal-body">
+<div class="text-center">
+<img src="./Introduction to Web Applications_files/discord-alternative.svg" alt="discord icon">
+<p class="mb-1">It looks like you have not linked your Discord account!</p>
+<p>You can receive question guidance via Discord. </p>
+<a href="https://academy.hackthebox.com/account/discord/link" class="btn btn-outline-success btn-block">
+Link your Discord account
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="referralModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="referralModal" aria-hidden="true" data-backdrop="static">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-header text-center border-0">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true"><img src="./Introduction to Web Applications_files/close.svg" alt="close"></span>
+</button>
+</div>
+<div class="modal-body">
+<div class="text-center">
+<img src="./Introduction to Web Applications_files/htb-coin.svg" alt="coin icon">
+<h1 class="text-white">Refer &amp; Earn</h1>
+<p class="text-secondary font-size-20">
+Refer a Friend, Earn Cubes, Unlock Academy Modules!
+</p>
+<div class="d-flex flex-column">
+<a href="https://academy.hackthebox.com/referral">
+<button type="button" class="btn btn-success btn-invite-friend text-light my-4">
+Invite Friends
+</button>
+</a>
+<button type="button" id="disableReferralModalBtn" onclick="disableModalRedisplay()" class="btn mt-2 mb-3 d-none">
+Don't show it again
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="footer">
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-6">
+</div>
+<div class="col-sm-6">
+<div class="text-sm-right d-none d-sm-block">
+Powered by &nbsp; <a href="https://www.hackthebox.com/" target="_blank"><img style="margin-bottom: 1px;" src="./Introduction to Web Applications_files/logo-htb.svg" height="20px"></a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+<script src="./Introduction to Web Applications_files/jquery.min.js.download"></script>
+<link rel="preload" as="style" href="./Introduction to Web Applications_files/vue-radial-progress-a171cc18.css"><link rel="preload" as="style" href="./Introduction to Web Applications_files/app-87bd4fed.css"><link rel="modulepreload" href="./Introduction to Web Applications_files/app-7d133fcd.js.download"><link rel="modulepreload" href="https://academy.hackthebox.com/build/assets/lodash-4cdd6148.js"><link rel="modulepreload" href="https://academy.hackthebox.com/build/assets/vue-pusher-c589860c.js"><link rel="modulepreload" href="https://academy.hackthebox.com/build/assets/vue-markdown-render-bc3c064d.js"><link rel="modulepreload" href="https://academy.hackthebox.com/build/assets/vue-router-0fe68d5f.js"><link rel="modulepreload" href="https://academy.hackthebox.com/build/assets/vuex-6e8de79e.js"><link rel="modulepreload" href="https://academy.hackthebox.com/build/assets/vue-radial-progress-47398f33.js"><link rel="modulepreload" href="https://academy.hackthebox.com/build/assets/popper-cca4b372.js"><link rel="modulepreload" href="https://academy.hackthebox.com/build/assets/vuejs-countdown-timer-33fc29d9.js"><link rel="modulepreload" href="https://academy.hackthebox.com/build/assets/vue-screen-2a148c9c.js"><link rel="modulepreload" href="https://academy.hackthebox.com/build/assets/vue2-perfect-scrollbar-479bab7f.js"><link rel="modulepreload" href="./Introduction to Web Applications_files/main-3fe82d1e.js.download"><link rel="modulepreload" href="https://academy.hackthebox.com/build/assets/just-detect-adblock-c3d9cfa8.js"><link rel="modulepreload" href="./Introduction to Web Applications_files/referral-3f67749e.js.download"><link rel="modulepreload" href="./Introduction to Web Applications_files/prism-c677b05a.js.download"><link rel="modulepreload" href="./Introduction to Web Applications_files/copyToClipboard-e397ca3e.js.download"><link rel="modulepreload" href="./Introduction to Web Applications_files/detectBrowser-2863cb72.js.download"><link rel="stylesheet" href="./Introduction to Web Applications_files/vue-radial-progress-a171cc18.css"><link rel="stylesheet" href="./Introduction to Web Applications_files/app-87bd4fed.css"><script type="module" src="./Introduction to Web Applications_files/app-7d133fcd.js.download"></script><script type="module" src="./Introduction to Web Applications_files/main-3fe82d1e.js.download"></script><script type="module" src="./Introduction to Web Applications_files/referral-3f67749e.js.download"></script><script type="module" src="./Introduction to Web Applications_files/prism-c677b05a.js.download"></script><script type="module" src="./Introduction to Web Applications_files/copyToClipboard-e397ca3e.js.download"></script><script type="module" src="./Introduction to Web Applications_files/detectBrowser-2863cb72.js.download"></script>
+<script src="./Introduction to Web Applications_files/bootstrap.bundle.min.js.download"></script>
+<script src="./Introduction to Web Applications_files/simplebar.min.js.download"></script>
+<script src="./Introduction to Web Applications_files/waves.min.js.download"></script>
+<script src="./Introduction to Web Applications_files/toastr.min.js.download"></script>
+<script>
+        $(document).ready(function() {
+            const csrfToken = 'tDsoddvkukHWCp6z5hcYjAU5SEs0LU1RW1kKro33'
+            const apiToken= 'I6QdlPIPhIYxYGAtVG9DDvKehV5SoGowEWRCnptZ0i5XJx57SVM457whTBmGgTTOCM0uckH2LUcBdy0X'
+           
+            initAxios(csrfToken,apiToken);
+        });
+    </script>
+<script>
+      let currentBrowser;
+
+      setTimeout(() => {
+        currentBrowser = window.detectBrowser();
+      }, 1000);
+
+    const AXIOS_ERROR_HANDLING_MESSAGE = "Something went wrong, please try again later.";
+
+              setTimeout(() => {
+            initReferralScheme();
+        }, 1000);
+      
+      $('table').addClass('table table-striped text-left').wrap('<div class="table-responsive"></div>');
+
+      $('.training-module a').attr('target', '_blank').attr('rel', 'noopener nofollow');
+
+      $('.favouriteBtn').click(function() {
+        let id = $(this).data('module-id');
+
+        axios.get('/api/modules/favourite/' + id).then(response => {
+          let data = response.data;
+          if (data.fav === 1) {
+            $(this).removeClass('far fa').addClass('fa');
+            toastr['success'](data.message, 'Success');
+          } else {
+            $(this).removeClass('far fa').addClass('far');
+            toastr['success'](data.message, 'Success');
+          }
+        }).catch(err => {
+          toastr['error'](AXIOS_ERROR_HANDLING_MESSAGE, 'Error');
+        });
+      });
+
+      function encode_utf8(string) {
+        return unescape(encodeURIComponent(string));
+      }
+
+      $('.btnAnswer').click(function() {
+        let question_id = $(this).data('question-id');
+        $(this).attr('disabled', 1);
+        $(this).find('.submit-button-text').addClass('d-none');
+        $(this).find('.submit-button-loader').removeClass('d-none');
+        let utf8EncodedString = encode_utf8($('#answer' + question_id).val());
+        axios.post('/api/check/answer', {
+          answer: btoa(utf8EncodedString),
+          question_id: question_id
+        }).then(response => {
+          let data = response.data;
+          if (data.success === 0) {
+            $(this).removeAttr('disabled');
+            if (data.can_ask_for_help && data.is_discord_linked) {
+              $(`.d-discord-${question_id}`).removeClass('d-none');
+              $('#requestHelpModal').modal('show').data('question_id', question_id);
+            } else if (data.can_ask_for_help && !data.is_discord_linked) {
+              $('#linkDiscordModal').modal('show');
+            }
+            toastr['error'](data.message, 'Error');
+          } else {
+            $(this).attr('disabled', 1);
+            $('#answer' + question_id).attr('disabled', 1);
+            $('#answer' + question_id).addClass('text-success');
+            $('#hintBtn' + question_id).attr('disabled', 1);
+            $(`.d-discord-${question_id}`).addClass('d-none');
+            toastr['success'](data.message, 'Success');
+            completeCheck();
+          }
+          $(this).find('.submit-button-text').removeClass('d-none');
+          $(this).find('.submit-button-loader').addClass('d-none');          
+        }).catch(err => {
+          toastr['error'](AXIOS_ERROR_HANDLING_MESSAGE, 'Error');
+        });
+      });
+
+      $('.btnAnswerExercise').click(function() {
+        let exercise_id = $(this).data('exercise-id');
+        $(this).attr('disabled', 1);
+        $(this).find('.submit-button-text').addClass('d-none');
+        $(this).find('.submit-button-loader').removeClass('d-none');
+        let utf8EncodedString = encode_utf8($(`#exerciseAnswer${exercise_id}`).val());
+        axios.post(`/api/check/exercise/${exercise_id}/answer`, {
+          answer: btoa(utf8EncodedString)
+        }).then(response => {
+          let data = response.data;
+          if (data.success === 0) {
+            $(this).removeAttr('disabled');
+            toastr['error'](data.message, 'Error');
+          } else {
+            $(this).attr('disabled', 1);
+            $(`#exerciseAnswer${exercise_id}`).attr('disabled', 1);
+            $(`#exerciseAnswer${exercise_id}`).addClass('text-success');
+            toastr['success'](data.message, 'Success');
+          }
+          $(this).find('.submit-button-text').removeClass('d-none');
+          $(this).find('.submit-button-loader').addClass('d-none');        
+        }).catch(err => {
+          toastr['error'](AXIOS_ERROR_HANDLING_MESSAGE, 'Error');
+        });
+      });
+
+      $('.btnAnswerExerciseMultiple').click(function() {
+        $(this).attr('disabled', 1);
+        $(this).find('.submit-button-text').addClass('d-none');
+        $(this).find('.submit-button-loader').removeClass('d-none');
+        let exercise_id = $(this).data('exercise-id');
+        $(this).attr('disabled', 1);
+        let utf8EncodedString = $(`#exerciseAnswer${exercise_id}`).find('input:checked').val();
+        axios.post(`/api/check/exercise/${exercise_id}/answer`, {
+          answer: btoa(utf8EncodedString)
+        }).then(response => {
+          let data = response.data;
+          if (data.success === 0) {
+            $(this).removeAttr('disabled');
+            toastr['error'](data.message, 'Error');
+            $(`#exerciseAnswer${exercise_id} input[type=radio]:checked`).parent().parent().find(`.exercise-answer-justification`).removeClass('d-none');
+            $(`#exerciseAnswer${exercise_id} input[type=radio]:checked`).attr('disabled', 1);
+            $(`#exerciseAnswer${exercise_id} input[type=radio]:checked`).parent().find('label').addClass('text-danger red');
+          } else {
+            $(this).attr('disabled', 1);
+            $(`#exerciseAnswer${exercise_id}`).attr('disabled', 1);
+            $(`#exerciseAnswer${exercise_id} input[type=radio]:checked`).parent().find('label').addClass('text-success green');
+            $(`#exerciseAnswer${exercise_id} input[type=radio]:checked`).parent().find('label').removeClass('red');
+            $(`#exerciseAnswer${exercise_id} input[type=radio]`).attr('disabled', 1);
+            $(`#exerciseAnswer${exercise_id} .exercise-answer-justification`).removeClass('d-none');
+            toastr['success'](data.message, 'Success');
+          }
+          $(this).find('.submit-button-text').removeClass('d-none');
+          $(this).find('.submit-button-loader').addClass('d-none');      
+        }).catch(err => {
+          toastr['error'](AXIOS_ERROR_HANDLING_MESSAGE, 'Error');
+        });
+      });
+
+
+      $('.reveal-modal').click(e => {
+        let id = $(e.target).data('exercise-id');
+        $(`#revealExerciseAnswer${id}`).modal('hide');
+      });
+
+      $(document).ready(function() {
+        setTimeout(()=>{
+          // we add a delay berofre calling this function 
+          // in order the axios headers to have been set
+          completeCheck();
+        },500)
+
+        $('pre').filter(function() {
+          return this.className.match(/\blanguage-/);
+        }).each(function() {
+          let heading = $(this).prevAll().closest('h4').last().text();
+
+          if (this.className === ' language-shell-session') {
+            wrapTerminal(this, heading);
+          } else if (this.className === ' language-powershell-session') {
+            wrapPSTerminal(this, heading);
+          } else if (this.className === ' language-cmd-session') {
+            wrapCMDTerminal(this, heading);
+          } else if (this.className.startsWith(' language-')) {
+            var language = this.className.split('-').pop();
+            wrapCodeBlock(this, language);
+          }
+        });
+
+        wrapBrowser($('.website-screenshot'));
+      
+
+        $('span:contains(\'[!bash!]\')').html('<span class="text-gray">khalfan6@htb</span><span class="text-success">[/htb]</span>');
+
+        let _vpnSelector = $('.vpnSelector');
+        let _selectedServer = _vpnSelector.val();
+        let _vpnLoader = $('.vpn-loader');
+        _vpnSelector.change(function() {
+          let vpnId = $('.vpnSelector option:selected').val();
+          if (!vpnId) return;
+
+          _vpnLoader.removeClass('d-none');
+          _vpnLoader.addClass('d-flex');
+          _vpnSelector.addClass('d-none');
+
+          axios.post(`/api/v2/vpn-servers/${vpnId}/switch`, {}).then(response => {
+            _vpnLoader.removeClass('d-flex');
+            _vpnLoader.addClass('d-none');
+            _vpnSelector.removeClass('d-none');
+
+            toastr['success']('Vpn server switched successfully', 'Success');
+            $('.startInstanceBtn').each(function() {
+              $(this).removeClass('disabled');
+            });
+
+          }).catch(err => {
+            _vpnLoader.removeClass('d-flex');
+            _vpnLoader.addClass('d-none');
+            _vpnSelector.removeClass('d-none');
+            toastr['error'](err.response.data.message, 'Error');
+            _vpnSelector.val(_selectedServer);
+
+          });
+        });
+      });
+
+
+      $('.download-vpn-settings').click(() => {
+        let type = 'regular';
+        let protocol = $('input[name="vpn-protocol"]:checked').val();
+        axios.get(`/api/v2/vpn-servers/key/download?type=${type}&protocol=${protocol}`).then(response => {
+          const url = window.URL.createObjectURL(new Blob([response.data]));
+          const link = document.createElement('a');
+          link.href = url;
+          link.setAttribute('download', `academy-${type}.ovpn`);
+          document.body.appendChild(link);
+          link.click();
+        }).catch(err => {
+          toastr['error'](err.response.data.message, 'Error');
+        });
+      });
+
+      $('#completeBtn').click(() => {
+        $('#completeBtn').addClass('disabled');
+        $('#complete-button-text').addClass('d-none');
+        $('#complete-button-loader').removeClass('d-none');
+      });
+
+
+      function completeCheck() {
+        axios.get('/api/check/complete/753').then(response => {
+          let data = response.data;
+          if (data.success === 1) {
+            if (data.completed === true) {
+              $('#completeBtn').show();
+            }
+          }
+        }).catch(err => {
+          toastr['error'](AXIOS_ERROR_HANDLING_MESSAGE, 'Error');
+        });
+      }
+
+      function wrapTerminal(element, heading) {
+        $(element).css('line-height', '0px');
+        $(element).wrap('<div class="window_content"></div>')
+          .parent().wrap('<div class="window_container"></div>')
+          .prepend(`
+                <div class='window_top'>
+                    <span class='window_dot bg-danger'></span>
+                    <span class='window_dot bg-warning'></span>
+                    <span class='window_dot bg-success'></span>
+                    <span class='window_title'>${heading}</span>
+                </div>
+            `);
+      }
+
+      function wrapPSTerminal(element, heading) {
+        $(element).css('background', '#012456').children().css('color', 'white');
+        $(element).css('line-height', '0px');
+        $(element).wrap('<div class="window_content"></div>')
+          .parent().wrap('<div class="window_container"></div>')
+          .prepend(`
+                <div class='window_top'>
+                    <span class='window_dot bg-danger'></span>
+                    <span class='window_dot bg-warning'></span>
+                    <span class='window_dot bg-success'></span>
+                    <span class='window_title'>${heading}</span>
+                </div>
+            `);
+      }
+
+      function wrapCMDTerminal(element, heading) {
+        $(element).css('background', 'black').children().css('color', 'white');
+        $(element).css('line-height', '0px');
+        $(element).wrap('<div class="window_content"></div>')
+          .parent().wrap('<div class="window_container"></div>')
+          .prepend(`
+                <div class='window_top'>
+                    <span class='window_dot bg-danger'></span>
+                    <span class='window_dot bg-warning'></span>
+                    <span class='window_dot bg-success'></span>
+                    <span class='window_title'>${heading}</span>
+                </div>
+            `);
+      }
+
+      function wrapCodeBlock(element, lang) {
+        $(element).wrap('<div class="window_content"></div>')
+          .parent().wrap('<div class="window_container"></div>')
+          .prepend('<div class="window_top">Code: <span class="text-success">' + lang + '</div>');
+      }
+
+      function wrapBrowserOld(element) {
+        $(element).css('border', '0px').css('border-radius', '0');
+        let url = element.data('url');
+        $(element).wrap('<div class="window_content"></div>')
+          .parent().wrap('<div class="window_container"></div>')
+          .prepend(`
+                <div class='window_top'>
+                    <span class='window_dot bg-danger'></span>
+                    <span class='window_dot bg-warning'></span>
+                    <span class='window_dot bg-success'></span>
+                    <input type='text' class='website-screenshot-url' disabled value='${url}'>
+                    <span class='float-right'><i class='fa fa-home'></i></span>
+                </div>
+            `);
+      }
+
+      function wrapBrowser(element) {
+        $(element).css('border', '0px').css('border-radius', '0');
+
+        $(element).each(function(index, e) {
+          let url = $(e).data('url');
+          $(e).wrap('<div class="window_content"></div>')
+            .parent().wrap('<div class="window_container"></div>')
+            .prepend(`
+                    <div class='window_top'>
+                        <span class='mr-2'>
+                            <i class='fa fa-arrow-circle-left'></i> <i class='fa fa-arrow-right'></i> <i class='fa fa-redo'></i> <i class='fa fa-home'></i>
+                        </span>
+                        <input type='text' class='website-screenshot-url' disabled value='${url}'>
+                        <span class='float-right'><i class='fa fa-bars'></i></span>
+                    </div>
+                `);
+        });
+      }
+ 
+      function requestHelp() {
+        let question_id = $('#requestHelpModal').data('question_id');
+        axios.post(`/api/question/${question_id}/help`)
+          .then(({ data }) => {
+            $('#requestHelpModal').modal('hide');
+            if (data.success == 0) {
+              toastr['error'](data.message, 'Error');
+              return;
+            }
+            toastr['success']('Request sent!', 'Success');
+          }).catch(err => {
+            toastr['error'](AXIOS_ERROR_HANDLING_MESSAGE, 'Error');
+          });
+      }
+
+      function openRequestModal(question_id) {
+        $('#requestHelpModal').modal('show').data('question_id', question_id);
+      }
+
+      function openWalkthroughModal(index, sectionTitle) {
+        let _walkthrougModal = $('#walkthroughModal');
+        const _walkthroughContent = $('#walkthroughModal').find('.training-module');
+        const _walkthroughLoader = $('.walkthrough-loader');
+        _walkthrougModal.modal('show');
+        _walkthrougModal.on('shown.bs.modal', function(event) {
+          const indexNumber = new Number(index);
+          
+          _walkthroughLoader.removeClass('d-none');
+          _walkthroughLoader.addClass('d-block');
+          
+          let question = `Question ${indexNumber + 1}`; 
+          let element = $("h1").filter(function() {
+            // Filter all the h1 headers, to find the exact section title
+            return $(this).text().trim().toLowerCase() === sectionTitle.toLowerCase();
+          }).nextAll("h2").filter(function() {
+            // then filter all the h2 headers, to find the exact question as well
+            return $(this).text().trim().toLowerCase() === question.toLowerCase();
+          }).first();
+          
+          if (element.length) {
+            setTimeout(() => {
+              _walkthroughLoader.addClass('d-none');
+              _walkthroughLoader.removeClass('d-block');
+              _walkthroughContent.removeClass('d-none');
+              
+              _walkthrougModal.animate({
+                  scrollTop: element.offset().top - _walkthrougModal.offset().top + _walkthrougModal.scrollTop()
+              }, 500);
+            }, 1500);
+          } else {
+            _walkthroughLoader.addClass('d-none');
+            _walkthroughLoader.removeClass('d-block');
+            _walkthroughContent.removeClass('d-none');
+          }
+        });
+        _walkthrougModal.on('hidden.bs.modal', function(event) {
+          // Make sure that content gets hidden again
+          // in case the user re-opens the modal multiple times
+          _walkthroughContent.addClass('d-none');
+        });
+      }
+
+    </script>
+<script type="module">
+      import RFB from '/assets/libs/vnc/core/rfb.js';
+
+      let rfb;
+      let sidePreview;
+      let desktopName;
+      let pwnboxActive = false;
+      
+      function connectedToServer(e) {
+        status('Connected to ' + desktopName);
+        $('.fullScreenBtn').show();
+        $('.resetInstanceBtn').show();
+        $('.terminateInstanceBtn').show();
+        $('.extendInstanceBtn').show();
+        $('.instanceLoading').hide();
+        $('.instanceStart').hide();
+        $('.resetInstanceBtn').prop('disabled', false);
+        $('.fullScreenBtn').prop('disabled', false);
+        $('.extendInstanceBtn').prop('disabled', false);
+        $('.terminateInstanceBtn').prop('disabled', false);
+
+        document.querySelector('canvas').addEventListener('focus', (event) => {
+          if (currentBrowser.firefox) {
+            window.copyToClipboard(event.target.textContent);
+          } else {
+            navigator.clipboard.readText()
+              .then(text => {
+                writeToClipboard(text);
+              })
+              .catch(err => {
+                console.error('Something went wrong while accessing clipboard', err);
+              });
+          }
+        });
+      }
+
+      function disconnectedFromServer(e) {
+        status('Disconnected');
+        $('.screenPlaceholder').show();
+        stopCountdown();
+      }
+
+      function clipboardReceived(e) {
+        navigator.clipboard.writeText(e.detail.text)
+          .then(() => {
+            // Success!
+          })
+          .catch(err => {
+            console.error('Something went wrong while copying to clipboard.', err);
+          });
+      }
+
+      function updateDesktopName(e) {
+        desktopName = e.detail.name;
+      }
+
+      function status(text) {
+        $('#statusText').html(text);
+      }
+
+      function readQueryVariable(name) {
+        const re = new RegExp('.*[?&]' + name + '=([^&#]*)'),
+          match = document.location.href.match(re);
+
+        if (match) {
+          return decodeURIComponent(match[1]);
+        }
+
+        return null;
+      }
+
+      function writeToClipboard(text) {
+        rfb.clipboardPasteFrom(text);
+      }
+
+      let host = '';
+      let password = '';
+      let countdown = '';
+      let targetCountdown = '';
+      let url = '';
+      let spawnInterval = null;
+
+      function getPwnbox() {
+        axios.get('/api/get/pwnbox').then(response => {
+          let data = response.data;
+            if (data.success === 1 && data.instance.status === 'ready') {
+                host = `proxy-${data.instance.location}.htb-cloud.com/bird/${data.instance.hostname}`;
+                password = data.instance.password
+                $('.lifeLeft').html(data.instance.life_remaining);
+                startCountdown();
+                $('.screenPlaceholder').hide();
+                url = 'https://vnc.htb-cloud.com/index.html?host=' + host + '&password=' + password;
+                pwnboxActive = true;
+                connect();
+                if (spawnInterval !== null) {
+                    clearInterval(spawnInterval);
+                }
+            } else {
+                $('.screenPlaceholder').show();
+            }
+
+        }).catch(err => {
+          toastr['error'](AXIOS_ERROR_HANDLING_MESSAGE, 'Error');
+        });
+      }
+
+      
+      setTimeout(()=>{
+         // we add a delay before calling this function 
+        // in order the axios headers to have been set
+        getPwnbox();
+      },500)
+
+      function startCountdown() {
+        countdown = setInterval(function() {
+          let life = parseInt($('.lifeLeft').html()) - 1;
+          $('.lifeLeft').html(life);
+        }, 60 * 1000);
+      }
+
+      function stopCountdown() {
+        clearInterval(countdown);
+      }
+
+      function terminatePwnbox() {
+        $('.resetInstanceBtn').prop('disabled', true);
+        $('.terminateInstanceBtn').prop('disabled', true);
+        $('.fullScreenBtn').prop('disabled', true);
+        $('.extendInstanceBtn').prop('disabled', true);
+        $('.instanceStart').hide();
+
+        $('.instanceTerminating').show();
+
+        status('Terminating Interactive Instance...');
+
+        axios.delete('/api/terminate/pwnbox')
+          .then(({ data }) => {
+            if (data.success === 1) {
+              $('.startInstanceBtn').show();
+              $('.instanceStart').show();
+              $('.instanceTerminating').hide();
+              $('.resetInstanceBtn').hide();
+              $('.terminateInstanceBtn').hide();
+              $('.fullScreenBtn').hide();
+              $('.extendInstanceBtn').hide();
+
+              pwnboxActive = false;
+
+              $('.iterminal').addClass('d-none');
+
+              toastr['success']('Instance has been terminated.', 'Success');
+            } else {
+              toastr['error'](data.message, 'Error');
+              connect();
+              $('.resetInstanceBtn').prop('disabled', false);
+              $('.fullScreenBtn').prop('disabled', false);
+              $('.extendInstanceBtn').prop('disabled', false);
+              $('.terminateInstanceBtn').prop('disabled', false);
+            }
+          }).catch(err => {
+            toastr['error'](AXIOS_ERROR_HANDLING_MESSAGE, 'Error');
+          });
+      }
+
+      function startPwnbox() {
+        $('.resetInstanceBtn').prop('disabled', true);
+        $('.fullScreenBtn').prop('disabled', true);
+        $('.extendInstanceBtn').prop('disabled', true);
+        $('.terminateInstanceBtn').prop('disabled', true);
+        $('.instanceStart').hide();
+        $('.instanceLoading').show();
+        $('.startInstanceBtn').hide();
+
+        status('Starting Interactive Instance...');
+
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6LeI6LsaAAAAAKgdStgBC6B4UVbXlpYNaYGN46Ah', { action: 'spawnPwnbox' }).then(function(token) {
+            if (token) {
+              axios.get('/api/spawn/pwnbox?g-recaptcha-response= ' + token).then(response => {
+                let data = response.data;
+                if (data.success === 1) {
+                  spawnInterval = setInterval(() => {
+                    getPwnbox();
+                  }, 2000);
+                } else {
+                  if (data.code === 1 || (data.code === 3 && pwnboxActive)) {
+                    $('.resetInstanceBtn').prop('disabled', false);
+                    $('.fullScreenBtn').prop('disabled', false);
+                    $('.extendInstanceBtn').prop('disabled', false);
+                    $('.terminateInstanceBtn').prop('disabled', false);
+                    connect();
+
+                    if (data.code === 3) {
+                      $('.instanceLoading').hide();
+                      startCountdown();
+                    }
+                  } else {
+                    $('.startInstanceBtn').show();
+                    $('.instanceStart').show();
+                    $('.instanceLoading').hide();
+                  }
+
+                  toastr['error'](data.message, 'Error');
+                }
+
+              }).catch(err => {
+                toastr['error'](AXIOS_ERROR_HANDLING_MESSAGE, 'Error');
+              });
+            } else {
+              $('.resetInstanceBtn').prop('disabled', false);
+              $('.fullScreenBtn').prop('disabled', false);
+              $('.extendInstanceBtn').prop('disabled', false);
+              $('.terminateInstanceBtn').prop('disabled', false);
+              $('.instanceStart').show();
+              $('.instanceLoading').hide();
+              $('.startInstanceBtn').show();
+            }
+          });
+        });
+      }
+
+
+
+      $('.fullScreenBtn').click(function() {
+        window.open(url, '_blank');
+      });
+
+      $('.startInstanceBtn').click(function() {
+        startPwnbox();
+      });
+
+      $('.resetInstanceBtn').click(function() {
+        $('.screenPlaceholder').show();
+        $('.instanceStart').show();
+                    sidePreview.disconnect();
+        startPwnbox();
+      });
+
+      $('.terminateInstanceBtn').click(function() {
+        $('.screenPlaceholder').show();
+        $('.instanceStart').show();
+                    sidePreview.disconnect();
+        terminatePwnbox();
+      });
+
+      $('.extendInstanceBtnClicker').click(function() {
+        extendPwnbox();
+      });
+
+      $('.resetTargetBtn').click(function() {
+        $(this).prop('disabled', true);
+          clearInterval(targetCountdown);
+                          });
+
+      
+      function connect() {
+        status('Connecting to ' + host.split('/')[2] + '...');
+
+          
+            sidePreview = new RFB(document.getElementById('sidePreview'), 'wss://' + host,
+            { credentials: { password: password } });
+
+        sidePreview.addEventListener('connect', connectedToServer);
+        sidePreview.addEventListener('disconnect', disconnectedFromServer);
+
+        sidePreview.resizeSession = false;
+        sidePreview.viewOnly = true;
+        sidePreview.scaleViewport = true;
+
+
+        /**
+         *  Dispatch an event when pwnBox is spawned
+         */
+        var spawnedPwnBoxEvent = new CustomEvent('SpawnedPwnBox');
+        window.dispatchEvent(spawnedPwnBoxEvent);
+      }
+
+      $('.target, .targetIp').click(e => {
+        if ($('.resetTargetBtn').is(':hidden')) return;
+        navigator.clipboard.writeText($(e.target).html())
+          .then(() => {
+            toastr['success']('Target copied to clipboard', 'Success');
+          })
+          .catch(err => {
+            console.log('Something went wrong while copying to clipboard.', err);
+          });
+      });
+
+          
+      function startTargetCountdown() {
+        targetCountdown = setInterval(function() {
+          let life = parseInt($('.targetLifeTime').html()) - 1;
+          $('.targetLifeTime').html(life);
+          if (life === 0) {
+            $('.targetLifeTimeContainer').hide();
+          }
+        }, 60 * 1000);
+      }
+    </script>
+
+<div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation" name="a-k73rumgsppwh" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" src="./Introduction to Web Applications_files/anchor.html"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="./Introduction to Web Applications_files/saved_resource.html"></iframe></div></body></html>
