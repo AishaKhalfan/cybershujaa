@@ -1,8 +1,8 @@
-> Week7: **Assignment 1:-Manage Virtual Machines**
+# Week7: **Assignment 1:-Manage Virtual Machines**
+
+## Report by: **Aisha Khalifan, cs-cns04-23014**
 >
-> Report by: **Aisha Khalifan, cs-cns04-23014**
->
-> **[Introduction]{.underline}**
+<ins>**[Introduction**<ins>
 >
 > This report is your guide to the exciting world of Azure virtual
 > machines (VMs) -- how to set them up and make them work seamlessly. We
